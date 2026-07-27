@@ -16,4 +16,10 @@ router.post("/logout",auth.logout);
 
 router.get("/dashboard",protect,auth.dashboard);
 
+router.get("/", (req, res) => {
+  res.json({
+    message: "Auth API is running"
+  });
+});
+
 module.exports=router;
