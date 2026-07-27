@@ -28,8 +28,14 @@ function Register() {
 
       navigate("/login");
     } catch (err) {
-      alert(err.response?.data?.message || "Registration Failed");
-    }
+  console.error(err);
+
+  alert(
+    err.response?.data?.message ||
+    err.message ||
+    "Registration Failed"
+  );
+}
   };
 
   return (
